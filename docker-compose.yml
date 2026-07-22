@@ -2,11 +2,11 @@ services:
   n8n:
     image: n8nio/n8n:latest
     environment:
-      - N8N_HOST=0.0.0.0
+      - N8N_HOST=n8n-automations-mi7cwo-e5311d-164-68-109-149.sslip.io
       - N8N_PORT=5678
       - N8N_PROTOCOL=https
-      - WEBHOOK_URL=https://n8n.jsgsoftwares.com
-      - N8N_EDITOR_URL=https://n8n.jsgsoftwares.com
+      - WEBHOOK_URL=https://n8n-automations-mi7cwo-e5311d-164-68-109-149.sslip.io
+      - N8N_EDITOR_URL=https://n8n-automations-mi7cwo-e5311d-164-68-109-149.sslip.io
       - GENERIC_TIMEZONE=America/Panama
       - N8N_ENCRYPTION_KEY=streamvision-n8n-encryption-2026
     volumes:
@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.n8n-automations.rule=Host(`n8n.jsgsoftwares.com`)"
+      - "traefik.http.routers.n8n-automations.rule=Host(`n8n-automations-mi7cwo-e5311d-164-68-109-149.sslip.io`)"
       - "traefik.http.routers.n8n-automations.entrypoints=websecure"
       - "traefik.http.routers.n8n-automations.tls.certresolver=letsencrypt"
       - "traefik.http.services.n8n-automations.loadbalancer.server.port=5678"
